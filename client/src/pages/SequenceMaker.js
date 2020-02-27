@@ -22,7 +22,7 @@ function SequenceMaker() {
 
   return (
     <div id="comic-maker">
-      {flips && flips.map((flip, index) => (flip === 1) ? <span key={index}>{index} </span> : "")}
+      {flips && flips.map(flip => <span key={flip}>{flip} </span>)}
       <button id="submit-comic" onClick={submitComic}>Done</button>
       <button id="get-new-flip" onClick={newFlip}>Flip Again</button>
     </div>

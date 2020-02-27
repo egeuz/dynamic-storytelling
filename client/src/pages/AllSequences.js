@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function AllSequences() {
@@ -17,7 +17,12 @@ function AllSequences() {
 
   return (
     <div>
-      {sequences && <p>sequences here</p>}
+      {
+        sequences &&
+        sequences.map((sequence, index) => {
+          return <p key={index}>{sequence.sequence.join(" ")} <br/></p>
+        })
+      }
     </div>
   )
 }
