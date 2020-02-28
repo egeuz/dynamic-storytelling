@@ -26,14 +26,14 @@ mongoose.connect(
   });
 
 /** COIN FLIP **/
-const flip = require('./flip');
+const generateSequence = require('./generateSequence');
 const COLS = 5;
 const ROWS = 5;
 
 /** ROUTES **/
-app.get('/new-flip', (req, res) => {
-  const flips = flip(COLS * ROWS);
-  res.json(flips);
+app.get('/generate-sequence', (req, res) => {
+  const sequence = generateSequence(COLS * ROWS);
+  res.json(sequence);
 });
 
 app.post('/new-sequence', (req, res) => {
